@@ -38,7 +38,7 @@ class Client:
 
             self.msg_label = tkinter.Label(self.win, text="Message:")
 
-            self.input_area = tkinter.Text(self.win, height=3)
+            self.input_area = tkinter.Text(self.win, height=2)
 
             self.send_button = tkinter.Button(self.win, text="Send", command=self.write)
 
@@ -56,7 +56,7 @@ class Client:
 
 
         def write(self):
-            message = f"{self.nickname}: {self.input_area.get("1.0", "end")}"
+            message = f"{self.nickname}: {self.input_area.get('1.0', 'end')}"
             self.sock.send(message.encode("utf-8"))
             self.input_area.delete("1.0", "end")
 

@@ -29,8 +29,8 @@ def receive():
         nicknames.append(nickname)
         clients.append(client)
 
-        print(f"Nickname of the client is {nickanme}")
-        broadcast(f"{nickame} connected to the server! \n".encode("utf-8"))
+        print(f"Nickname of the client is {nickname}")
+        broadcast(f"{nickname} connected to the server! \n".encode("utf-8"))
         client.send("Now connected!".encode("utf-8"))
 
         thread = threading.Thread(target=handle, args=(client,))
